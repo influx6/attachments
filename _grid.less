@@ -1,0 +1,99 @@
+@gutter: 20;
+.floated{ float:left; display:inline; }
+
+.gridGenerator(@size:960,@columns) when (@columns = 16){
+	
+	@main: (@size - @gutter );
+	@box: @main / @columns;
+	@sub: percentage(@box / @main);
+
+	.col1{ .floated; margin-right:1%; margin-left:1%; width: (@sub); }
+	.col2{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 2); }
+	.col3{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 3); }
+	.col4{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 4); }
+	.col5{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 5); }
+	.col6{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 6); }
+	.col7{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 7); }
+	.col8{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 8); }
+	.col9{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 9); }
+	.col10{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 10); }
+	.col11{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 11); }
+	.col12{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 12); }
+	.col13{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 13); }
+	.col14{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 14); }
+	.col15{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 15); }
+	.col16{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 16); }
+
+}
+.gridGenerator(@size:960,@columns) when (@columns = 12){
+	
+	@main: (@size - @gutter );
+	@box: @main / @columns;
+	@sub: percentage(@box / @main);
+
+	.col1{ .floated; margin-right:1%; margin-left:1%; width: (@sub); }
+	.col2{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 2); }
+	.col3{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 3); }
+	.col4{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 4); }
+	.col5{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 5); }
+	.col6{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 6); }
+	.col7{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 7); }
+	.col8{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 8); }
+	.col9{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 9); }
+	.col10{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 10); }
+	.col11{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 11); }
+	.col12{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 12); }
+
+}
+.gridGenerator(@size:960,@columns) when (@columns = 8){
+	
+	@main: (@size - @gutter );
+	@box: @main / @columns;
+	@sub: percentage(@box / @main);
+
+	.col1{ .floated; margin-right:1%; margin-left:1%; width: (@sub); }
+	.col2{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 2); }
+	.col3{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 3); }
+	.col4{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 4); }
+	.col5{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 5); }
+	.col6{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 6); }
+	.col7{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 7); }
+	.col8{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 8); }
+
+}
+.gridGenerator(@size:960,@columns) when (@columns = 6){
+	
+	@main: (@size - @gutter );
+	@box: @main / @columns;
+	@sub: percentage(@box / @main);
+
+	.col1{ .floated; margin-right:1%; margin-left:1%; width: (@sub); }
+	.col2{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 2); }
+	.col3{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 3); }
+	.col4{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 4); }
+	.col5{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 5); }
+	.col6{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 6); }
+
+}
+.gridGenerator(@size:960,@columns) when (@columns = 4){
+	
+	@main: (@size - @gutter );
+	@box: @main / @columns;
+	@sub: percentage(@box / @main);
+
+	.col1{ .floated; margin-right:1%; margin-left:1%; width: (@sub); }
+	.col2{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 2); }
+	.col3{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 3); }
+	.col4{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 4); }
+
+}
+.gridGenerator(@size:960,@columns) when (@columns = 2){
+	
+	@main: (@size - @gutter );
+	@box: @main / @columns;
+	@sub: percentage(@box / @main);
+
+	.col1{ .floated; margin-right:1%; margin-left:1%; width: (@sub); }
+	.col2{ .floated; margin-right:1%; margin-left:1%; width: (@sub * 2); }
+
+}

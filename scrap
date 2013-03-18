@@ -1,0 +1,57 @@
+nano = require('nano')('http://127.0.0.1:5984');
+storejs = require('./builds/storejs-server');
+
+/*
+storejs.NanoCouchdb.request('admins','alex','get',{ revisions: true });
+storejs.NanoCouchdb.request('admins','alex','head',{ })
+.done(function(){ console.log(arguments)})
+.fail(function(){ console.log(arguments); });
+
+storejs.NanoCouchdb.streamRelax({ db: 'admins',att:'packagejson',
+'content_type':'text/plain',method: 'PUT', params:{ }, doc:'alex6' },
+require('fs').createReadStream(require('path').resolve('./package.json'))).done(function(stream){ console.log(stream); });
+*/
+
+storejs = require('./builds/storejs-server');
+couch = storejs.NanoCouchdb.use('admins',{ admin: false });
+couch.save('alex',{name:'alex'});
+couch.info('alex').done(function(){ console.log(arguments); })
+
+storejs = require('./builds/storejs-server');
+couch = storejs.NanoCouchdb.use('admins',{ admin: false });
+couch.getAttachment('alex','packagejson');
+couch.destroyAttachment('alex','packagejson');
+
+couch.save('alex',{name:'alex'});
+couch.saveAttachment('alex','packagejson','application/json',null,require('fs').createReadStream(require('path').resolve('./package.json')));
+
+// done(function (argument) { console.log('yah!'); }).
+// fail(function (argument) { console.log('damn!'); }).
+// progress(function (a){ console.log(a,'progressing!');});
+// storejs.NanoCouchdb.allDB(function(){ console.log(arguments); });
+
+
+ts = require('tsk').ToolStack;
+util = ts.Utility;
+a = ts.MessageAPI(false,100);
+a.addChannel('test');
+a.getChannel('test').add('hello',function(a){ console.log(a);});
+i = 10;
+while(--i){ a.notify('test','hello','i am alex!'); };
+
+ts = require('./builds/toolstack').ToolStack;
+a = ts.Atoms();
+a.set('a',3);
+a.set('b',{ v: 5});
+a.json(function(json){ console.log(json); })
+
+ts = require('tsk').ToolStack;
+err = ts.Errors;
+i = new err.DatabaseError('Sunden death!');
+
+
+ts = require('tsk').ToolStack;
+m = require('./model')(ts)({},{});
+n = m.create({ name: { type: 'string' } });
+n.schema = { name: { type:'string'}, age: { type:'number'} }
+n.extend({ name: { type:'string'}, age: { type:'number'} })
